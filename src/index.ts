@@ -13,9 +13,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// Allows for photo access
-app.use("/uploads_/", express.static("uploads_"));
-
 // Application router or Application middleware
 app.use("/api/v1", router);
 

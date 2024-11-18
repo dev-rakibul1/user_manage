@@ -8,7 +8,9 @@ const CreateTaskService = async (payloads: Task): Promise<Task | null> => {
 };
 // Get all task service
 const GetTaskService = async (): Promise<Task[] | null> => {
-  const getTask = await prisma.task.findMany({});
+  const getTask = await prisma.task.findMany({
+    orderBy: { createdAt: "desc" },
+  });
   return getTask;
 };
 
